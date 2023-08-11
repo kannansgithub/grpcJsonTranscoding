@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "Messages/ReadTodo.proto";
+
+message ReadAllTodoRequest{
+}
+
+message ReadAllTodoResponse{
+  repeated ReadTodoResponse to_do=1;
+}

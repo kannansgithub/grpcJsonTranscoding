@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message DeleteTodoRequest{
+  int32 id=1;
+}
+
+message DeleteTodoResponse{
+  int32 id=1;
+}

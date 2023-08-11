@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message CreateTodoRequest{
+  string title=1;
+  string description=2;
+
+}
+
+message CreateTodoResponse{
+  int32 id=1;
+}

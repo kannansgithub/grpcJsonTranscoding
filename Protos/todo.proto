@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "Messages/CreateTodo.proto";
+import "Messages/DeleteTodo.proto";
+import "Messages/ReadAllTodo.proto";
+import "Messages/ReadTodo.proto";
+import "Messages/UpdateTodo.proto";
+
+import "google/api/annotations.proto";
+
+option csharp_namespace = "ToDoGrpc";
+package todoit;
+
+service ToDoIt{
+//Create
+rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse){}
+//Read Single Item
+rpc ReadTodo(ReadTodoRequest) returns (ReadTodoResponse){}
+//Read List
+rpc ReadAllTodo(ReadAllTodoRequest) returns (ReadAllTodoResponse){
+  option (google.api.http) = {
+    get:"/v1/todo"
+  };
+}
+//Update
+rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse){}
+//Delete
+rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse){}
+
+}
+
